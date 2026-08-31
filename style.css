@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #080202;
+  color: #e0e0e0;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+}
+
+/* Ticker */
+.ticker-wrap {
+  background-color: #8b0000;
+  color: #ffffff;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 5px 0;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+/* Header / Nav */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #0d0404;
+  border-bottom: 1px solid #260808;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.logo span { color: #ff2200; }
+
+nav a {
+  color: #a0a0a0;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.btn-nav {
+  border: 1px solid #ff2200;
+  padding: 8px 16px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+/* Hero */
+.hero {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sub-header {
+  color: #ff3300;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.main-title {
+  font-size: 5rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+}
+
+.main-title .roman {
+  color: #ff3300;
+}
+
+.description {
+  color: #8a8a8a;
+  max-width: 650px;
+  margin: 20px auto;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Event Info */
+.event-info {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+  border-top: 1px solid #1c0a0a;
+  border-bottom: 1px solid #1c0a0a;
+  padding: 20px 0;
+}
+
+.event-info h4 {
+  color: #ff3300;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.event-info p {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.95rem;
+}
+
+/* Countdown */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.time-box {
+  background-color: #120606;
+  border: 1px solid #2b0d0d;
+  padding: 15px 20px;
+  min-width: 80px;
+}
+
+.time-box span {
+  font-size: 2.2rem;
+  font-weight: bold;
+  display: block;
+}
+
+.time-box p {
+  color: #666;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+}
+
+/* CTA Button */
+.btn-cta {
+  display: inline-block;
+  background-color: #ff2200;
+  color: #fff;
+  padding: 15px 40px;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 2px;
+  box-shadow: 0 0 15px rgba(255, 34, 0, 0.4);
+}
