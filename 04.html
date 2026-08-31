@@ -65,7 +65,7 @@
       background:
         radial-gradient(circle at center, rgba(128, 10, 10, .38), transparent 48%),
         linear-gradient(rgba(6, 5, 5, .82), rgba(6, 5, 5, .98)),
-        url("purge.png") center/cover;
+        url("fondoterror.png") center/cover;
       transition: opacity .55s ease, visibility .55s ease;
     }
 
@@ -180,7 +180,7 @@
         radial-gradient(circle at 15% 20%, rgba(184, 18, 18, .28), transparent 40%),
         radial-gradient(circle at 85% 60%, rgba(138, 3, 3, .35), transparent 45%),
         linear-gradient(to bottom, rgba(104, 103, 105, .6), rgba(6, 5, 5, .92)),
-        url("purge.png") center/cover;
+        url("fondoterror.png") center/cover;
       border-bottom: 1px solid var(--line);
     }
 
@@ -239,6 +239,40 @@
     .rule .num { color: var(--blood-bright); font: 700 .85rem "Space Mono", monospace; }
     .rule h3 { margin: .4rem 0 .5rem; color: var(--bone); font-size: 1.1rem; font-weight: 600; text-transform: uppercase; }
     .rule p { color: var(--bone-dim); font-size: .92rem; line-height: 1.55; }
+
+    .feature-image {
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
+      width: min(100%, 380px);
+      margin: 2.2rem auto 2.5rem;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--blood-bright);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, .65);
+    }
+
+    .feature-image img { display: block; width: auto; max-width: 100%; height: auto; max-height: 520px; margin: 0 auto; object-fit: contain; object-position: center; filter: contrast(1.08) saturate(.92); }
+    .feature-image figcaption { padding: .65rem 1rem; color: var(--bone-dim); background: rgba(6,5,5,.96); font: .62rem "Space Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
+
+    .decree::after,
+    .purga-route::after,
+    .registro::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 0;
+      height: 42px;
+      pointer-events: none;
+      opacity: .42;
+      background:
+        radial-gradient(ellipse at 7% 0, var(--blood-bright) 0 8px, transparent 9px),
+        radial-gradient(ellipse at 23% 0, var(--blood) 0 14px, transparent 15px),
+        radial-gradient(ellipse at 58% 0, var(--blood-bright) 0 10px, transparent 11px),
+        radial-gradient(ellipse at 84% 0, var(--blood) 0 17px, transparent 18px);
+    }
 
     .purga-route {
       overflow: hidden;
@@ -309,7 +343,8 @@
     .registro { background-color: var(--char); background-image: radial-gradient(ellipse at bottom right, rgba(184, 18, 18, .25), transparent 70%); border-top: 1px solid var(--line); }
     .reg-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 3.5rem; }
     .reg-info p { margin-bottom: 1.6rem; color: var(--bone-dim); line-height: 1.7; }
-    .group-link { display: inline-block; color: var(--siren); font: .75rem "Space Mono", monospace; text-decoration: underline; text-underline-offset: 5px; }
+    .group-link { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; margin: .4rem 0 1.2rem; padding: 1rem 1.3rem; color: var(--black); background: var(--siren); border: 1px solid var(--siren); box-shadow: 0 0 25px rgba(255, 122, 0, .35); font: 700 .78rem "Space Mono", monospace; letter-spacing: .08em; text-transform: uppercase; transition: .25s; }
+    .group-link:hover { color: var(--siren); background: transparent; box-shadow: 0 0 35px rgba(255, 122, 0, .5); transform: translateY(-2px); }
 
     .reg-form { padding: 2.4rem; background: var(--panel); border: 1px solid var(--line); border-top: 3px solid var(--blood-bright); box-shadow: 0 15px 35px rgba(0, 0, 0, .9); }
     .field { margin-bottom: 1.3rem; }
@@ -347,7 +382,8 @@
       .nav-cta { padding: .45rem .75rem; font-size: .68rem; white-space: nowrap; }
       .sound-control { right: 12px; bottom: 12px; padding: .55rem .7rem; font-size: .62rem; }
       section { padding: 4rem 5%; }
-      .hero { min-height: auto; padding: 5rem 5% 3.5rem; }
+      .entry-gate { background-image: radial-gradient(circle at center, rgba(128, 10, 10, .38), transparent 48%), linear-gradient(rgba(6, 5, 5, .82), rgba(6, 5, 5, .98)), url("fondoterror.png"); background-position: center; background-size: cover; }
+      .hero { min-height: auto; padding: 5rem 5% 3.5rem; background-image: radial-gradient(circle at 15% 20%, rgba(184, 18, 18, .28), transparent 40%), radial-gradient(circle at 85% 60%, rgba(138, 3, 3, .35), transparent 45%), linear-gradient(to bottom, rgba(104, 103, 105, .55), rgba(6, 5, 5, .94)), url("fondoterror.png"); background-position: center top; background-size: cover; }
       .logo-purge { width: 100%; font-size: clamp(3.4rem, 17vw, 6rem); white-space: nowrap; }
       .roman-bar { width: 8px; height: 29px; }
       .logo-edition { font-size: clamp(1.05rem, 5vw, 1.7rem); }
@@ -365,6 +401,8 @@
       .tickets-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; gap: 1.8rem; }
       .reg-form { padding: 1.4rem; }
+      .feature-image { width: min(100%, 360px); }
+      .feature-image img { width: auto; max-width: 100%; height: auto; max-height: 480px; }
     }
 
     @media (max-width: 420px) {
@@ -416,7 +454,7 @@
       <a href="#entradas">Entradas</a>
       <a href="#registro">Registro</a>
     </nav>
-    <a href="#registro" class="nav-cta">Ser parte</a>
+    <a href="#registro" class="nav-cta">Ser parte de la purga</a>
   </header>
 
   <main>
@@ -457,7 +495,12 @@
       <div class="decree-inner">
         <div class="eyebrow">Concursos y premios</div>
         <h2 class="section-title">Recompensas de La Purga</h2>
-        <p class="lead">La creatividad, el terror y la actitud serán premiados. Prepara tu disfraz, transforma tu vehículo y compite por premios y sorpresas durante la noche.</p>
+      <p class="lead">La creatividad, el terror y la actitud serán premiados. Prepara tu disfraz, transforma tu vehículo y compite por premios y sorpresas durante la noche.</p>
+
+        <figure class="feature-image">
+          <img src="foto1.png" alt="Concursos, recompensas y premios de La Purga" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'">
+          <figcaption>Concursos · Recompensas · Premios de La Purga</figcaption>
+        </figure>
 
         <div class="rules-grid">
           <article class="rule">
@@ -494,6 +537,11 @@
           <h2 class="section-title">La ruta de <span>La Purga</span></h2>
           <p class="purga-route-description">La noche comienza con la Rodada del Terror desde el Redondel del Choclo, continúa con un gran meet en el punto final del recorrido y termina dentro del perímetro con la Halloween Party.</p>
         </div>
+
+        <figure class="feature-image">
+          <img src="foto2.PNG" alt="Rodada del Terror y ruta de La Purga" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'">
+          <figcaption>Rodada del Terror · Meet · Halloween Party</figcaption>
+        </figure>
 
         <div class="purga-route-grid">
           <article class="purga-step">
@@ -577,7 +625,12 @@
           <div class="eyebrow">Última transmisión</div>
           <h2 class="section-title">Ingresa a la lista de sobrevivientes</h2>
           <p>Completa tus datos, selecciona cómo participarás y activa tu registro para La Purga III Edición.</p>
-          <a class="group-link" href="https://chat.whatsapp.com/GctF1TBZ3vLBylT6mSjeDo?mode=ems_copy_t" target="_blank" rel="noopener noreferrer">Ingresar al grupo oficial →</a>
+          <a class="group-link" href="https://chat.whatsapp.com/IlqySPwy4vOAjIIWUuZaO6?s=cl&amp;p=i&amp;mlu=4" target="_blank" rel="noopener noreferrer">💬 Ingresar al grupo oficial →</a>
+
+          <figure class="feature-image">
+            <img src="foto 3.png" alt="Lista oficial de sobrevivientes de La Purga" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'">
+            <figcaption>Ingresa a la lista de sobrevivientes</figcaption>
+          </figure>
         </div>
 
         <form class="reg-form" id="registrationForm">
@@ -626,7 +679,7 @@
           </div>
 
           <button type="submit" class="submit-btn">Activar mi registro →</button>
-          <p class="form-note">Al continuar se abrirá WhatsApp con tus datos de registro. Revisa el mensaje y presiona Enviar.</p>
+          <p class="form-note">Al continuar se abrirá el WhatsApp oficial para finalizar y confirmar tu registro.</p>
         </form>
       </div>
     </section>
@@ -644,16 +697,16 @@
         <div class="footer-title">Organizadores y redes</div>
         <div class="social-links">
           <!-- Reemplaza # con los enlaces oficiales de los organizadores -->
-          <a href="#" aria-label="Instagram oficial">Instagram</a>
-          <a href="#" aria-label="TikTok oficial">TikTok</a>
-          <a href="https://wa.me/593996697348" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="https://www.instagram.com/la_purga_valle?igsi=M2l4YXBrZXM2ZXpv&amp;utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram oficial">Instagram</a>
+          <a href="https://www.tiktok.com/@the.club.valle?_r=1&amp;_t=ZS-99Kerd2vQeu" target="_blank" rel="noopener noreferrer" aria-label="TikTok oficial">TikTok</a>
+          <a href="https://wa.me/593987193025" target="_blank" rel="noopener noreferrer">WhatsApp</a>
         </div>
       </div>
 
       <div class="promoter-box">
         <strong>¿Quieres trabajar con nosotros?</strong>
         <p>Forma parte del equipo oficial de promotores, obtén beneficios por tus ventas y vive la experiencia desde adentro.</p>
-        <a class="promoter-button" href="https://wa.me/593996697348?text=Hola%2C%20quiero%20formar%20parte%20del%20equipo%20de%20promotores%20de%20La%20Purga%20III%20Edici%C3%B3n." target="_blank" rel="noopener noreferrer">Quiero ser promotor →</a>
+        <a class="promoter-button" href="https://wa.me/593987193025?text=Hola%2C%20quiero%20ser%20promotor%20de%20La%20Purga%20III%20Edici%C3%B3n.%20Deseo%20recibir%20informaci%C3%B3n%20para%20trabajar%20con%20ustedes." target="_blank" rel="noopener noreferrer">Quiero ser promotor →</a>
       </div>
     </div>
     <div class="copyright">LA PURGA III EDICIÓN · VALLE DE LOS CHILLOS · 2026</div>
@@ -683,6 +736,14 @@
     setInterval(updateCountdown, 1000);
 
     const registrationForm = document.getElementById("registrationForm");
+    const officialWhatsAppNumber = "593987193025";
+
+    function formatBirthDate(value) {
+      if (!value) return "No especificada";
+      const parts = value.split("-");
+      if (parts.length !== 3) return value;
+      return parts[2] + "/" + parts[1] + "/" + parts[0];
+    }
 
     registrationForm.addEventListener("submit", function (event) {
       event.preventDefault();
@@ -694,22 +755,23 @@
       const participacion = document.getElementById("participacion").value;
       const navePurgatoria = document.getElementById("navePurgatoria").value;
       const mensaje = [
-        "🎃 Quiero ser parte de LA PURGA III EDICIÓN.",
+        "🎃 *NUEVO REGISTRO — LA PURGA III EDICIÓN*",
         "",
-        "👤 Nombre: " + nombre,
-        "📱 WhatsApp: " + telefono,
-        "🎂 Fecha de nacimiento: " + nacimiento,
-        "🎟️ Entrada: " + tipoEntrada,
-        "🚗 Participación: " + participacion,
-        "🏆 Nave Purgatoria: " + navePurgatoria,
-        "📅 Evento: 31 de octubre de 2026",
-        "📍 Valle de los Chillos",
+        "👤 *Nombre completo:* " + nombre,
+        "📱 *Número de WhatsApp:* " + telefono,
+        "🎂 *Fecha de nacimiento:* " + formatBirthDate(nacimiento),
+        "🎟️ *Tipo de entrada:* " + tipoEntrada,
+        "🚗 *Cómo llegará a La Purga:* " + participacion,
+        "🏆 *Participa en Nave Purgatoria:* " + navePurgatoria,
         "",
-        "Deseo recibir información para asegurar mi entrada."
+        "📅 *Evento:* 31 de octubre de 2026",
+        "📍 *Lugar:* Valle de los Chillos",
+        "",
+        "Quiero activar y confirmar mi registro."
       ].join("\n");
 
-      const whatsappUrl = "https://wa.me/593996697348?text=" + encodeURIComponent(mensaje);
-      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+      const whatsappUrl = "https://wa.me/" + officialWhatsAppNumber + "?text=" + encodeURIComponent(mensaje);
+      window.location.href = whatsappUrl;
     });
 
     document.querySelectorAll("[data-ticket]").forEach(function (button) {
@@ -726,6 +788,34 @@
     let audioCtx = null;
     let isPlaying = false;
     let mainLoopInterval = null;
+    let preferredVoice = null;
+
+    function selectNaturalSpanishVoice() {
+      if (!("speechSynthesis" in window)) return null;
+      const voices = window.speechSynthesis.getVoices();
+      if (!voices.length) return null;
+
+      const scored = voices.map(function (voice) {
+        const name = (voice.name || "").toLowerCase();
+        const lang = (voice.lang || "").toLowerCase();
+        let score = 0;
+        if (lang === "es-ec") score += 120;
+        else if (lang.startsWith("es-")) score += 90;
+        else if (lang === "es") score += 70;
+        if (/mónica|monica|paulina|helena|jorge|google español|natural|premium|enhanced/.test(name)) score += 35;
+        if (/compact|eloquence/.test(name)) score -= 10;
+        if (voice.localService) score += 5;
+        return { voice: voice, score: score };
+      }).sort(function (a, b) { return b.score - a.score; });
+
+      preferredVoice = scored[0].score > 0 ? scored[0].voice : null;
+      return preferredVoice;
+    }
+
+    if ("speechSynthesis" in window) {
+      selectNaturalSpanishVoice();
+      window.speechSynthesis.onvoiceschanged = selectNaturalSpanishVoice;
+    }
 
     function playPurgeSiren() {
       if (!isPlaying || !audioCtx) return;
@@ -749,11 +839,15 @@
 
     function speakPurgeMessage() {
       if (!isPlaying || !("speechSynthesis" in window)) return;
-      const message = "Atención, ciudadanos. Esto no es una prueba. Este es el sistema de transmisión de emergencia anunciando el inicio de la tercera edición de La Purga, Valle de los Chillos. Al sonar la sirena comienza la noche. Preparen sus máscaras y vehículos. Que La Purga comience.";
+      window.speechSynthesis.cancel();
+      const voice = preferredVoice || selectNaturalSpanishVoice();
+      const message = "Atención, ciudadanos... Esto no es una prueba. El sistema de transmisión de emergencia anuncia el inicio de la tercera edición de La Purga, en el Valle de los Chillos. La rodada partirá a las siete de la noche desde el Redondel del Choclo. Preparen sus máscaras... enciendan sus motores... y recuerden: cuando suene la sirena, la noche habrá comenzado. Que La Purga comience.";
       const speech = new SpeechSynthesisUtterance(message);
-      speech.lang = "es-EC";
-      speech.rate = .88;
-      speech.pitch = .65;
+      if (voice) speech.voice = voice;
+      speech.lang = voice ? voice.lang : "es-EC";
+      speech.rate = .86;
+      speech.pitch = .82;
+      speech.volume = 1;
       window.speechSynthesis.speak(speech);
     }
 
@@ -769,18 +863,26 @@
       const text = document.getElementById("soundText");
       const AudioContextClass = window.AudioContext || window.webkitAudioContext;
 
-      if (!AudioContextClass) {
-        icon.textContent = "🔇";
-        text.textContent = "Audio no disponible";
-        return;
-      }
-
-      if (!audioCtx) audioCtx = new AudioContextClass();
-      if (audioCtx.state === "suspended") audioCtx.resume();
       isPlaying = true;
       icon.textContent = "🔊";
       text.textContent = "Silenciar terror";
-      executePurgeBroadcast();
+
+      /* La voz se solicita dentro del toque para desbloquear iOS y Android. */
+      speakPurgeMessage();
+
+      if (AudioContextClass) {
+        if (!audioCtx || audioCtx.state === "closed") audioCtx = new AudioContextClass();
+        const beginSiren = function () {
+          playPurgeSiren();
+          setTimeout(playPurgeSiren, 2800);
+        };
+        if (audioCtx.state === "suspended") {
+          audioCtx.resume().then(beginSiren).catch(beginSiren);
+        } else {
+          beginSiren();
+        }
+      }
+
       clearInterval(mainLoopInterval);
       mainLoopInterval = setInterval(executePurgeBroadcast, 180000);
     }
